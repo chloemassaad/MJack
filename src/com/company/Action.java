@@ -32,7 +32,7 @@ public class Action {
       while (!(a > 0 && a < 10)) {
          a = scanner.nextInt();
 
-         if (!(a < 0 || a > 10))
+         if (a < 0 || a > 10)
             System.out.println("Ressaisissez un chiffre entre 1 et 9 ! ");
         }
 
@@ -40,11 +40,32 @@ public class Action {
        while (!((b > 0 && b < 10) && (a != b))) {
          b = scanner.nextInt();
 
-         if (!((b < 0 || b > 10) || (a == b)))
+         if ((b < 0 || b > 10) || (a == b))
             System.out.println("Ressaisissez un chiffre entre 1 et 9, différent du premier (obligation d'échanger)!");
         }
 // trouver un moyen de de designer la case du plateau enfonction de sa place
 
-    }*/
+      public void rotation(){
+         int pst = 0;
+         int rot = 0;
+
+         System.out.println("Choisissez un quartier à faire pivoter (entre 1 et 9, sachant que 1 est en haut à gauche et 9 en bas à droite)");
+         while (!(pst > 0 && pst < 10)) {
+            pst = scanner.nextInt();
+
+            if (pst < 0 || pst > 10)
+                System.out.println("Ressaisissez un chiffre entre 1 et 9 ! ");
+        }
+
+          System.out.println("Choisissez l'orientation du mur du quartier (entre 1 et 4, 1 = à gauche/ 2 = en haut/ 3 = à droite/ 4 = en bas)");
+          while (!((rot > 0 && rot < 5) && // case du plateau et son sens//)) {
+               rot = scanner.nextInt();
+
+               if ((rot < 0 || rot > 5) || // case du plateau et son sens//)
+                    System.out.println("Ressaisissez un chiffre entre 1 et 4, vous êtes obligé de tourner !");
+        }
+// trouver un moyen de de designer la case du plateau enfonction de sa place
+}
+   */
 
 }

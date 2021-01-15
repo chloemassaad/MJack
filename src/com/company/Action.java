@@ -25,24 +25,22 @@ public class Action {
 
     }
     public void echange(){
-      int a = 0;
-      int b = 0;
-
-      System.out.println("Choisissez le premier quartier à déplacer (entre 1 et 9, sachant que 1 est en haut à gauche et 9 en bas à droite)");
-      while (!(a > 0 && a < 10)) {
-         a = scanner.nextInt();
-
-         if (a < 0 || a > 10)
-            System.out.println("Ressaisissez un chiffre entre 1 et 9 ! ");
+        int q1 = 0;
+        int q2 = 0;
+        
+        System.out.println("Choisissez le premier quartier à déplacer (entre 1 et 9, sachant que 1 est en haut à gauche et 9 en bas à droite)");
+        while (!(q1 > 0 && q1 < 10)) {
+            q1 = scanner.nextInt();
+            if (q1 < 0 || q1 > 10)
+                System.out.println("Ressaisissez un chiffre entre 1 et 9 ! ");
         }
-
-       System.out.println("Choisissez le second quartier à échanger avec le précédent (entre 1 et 9)");
-       while (!((b > 0 && b < 10) && (a != b))) {
-         b = scanner.nextInt();
-
-         if ((b < 0 || b > 10) || (a == b))
-            System.out.println("Ressaisissez un chiffre entre 1 et 9, différent du premier (obligation d'échanger)!");
-        }
+        
+        System.out.println("Choisissez le second quartier à échanger avec le précédent (entre 1 et 9)");
+        while (!((q2 > 0 && q2 < 10) && (q1 != q2))) {
+            q2 = scanner.nextInt();
+            if ((q2 < 0 || q2 > 10) || (q1 == q2))
+                System.out.println("Ressaisissez un chiffre entre 1 et 9, différent du premier (obligation d'échanger)!");
+    }
 // trouver un moyen de de designer la case du plateau enfonction de sa place
 
       public void rotation(){

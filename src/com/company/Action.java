@@ -27,21 +27,34 @@ public class Action {
     public void echange(){
         int q1 = 0;
         int q2 = 0;
-        
+        int colonne1 = 0;
+        int ligne1 = 0;
+        int colonne2 = 0;
+        int ligne2 = 0;
+
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Choisissez le premier quartier à déplacer (entre 1 et 9, sachant que 1 est en haut à gauche et 9 en bas à droite)");
         while (!(q1 > 0 && q1 < 10)) {
             q1 = scanner.nextInt();
             if (q1 < 0 || q1 > 10)
                 System.out.println("Ressaisissez un chiffre entre 1 et 9 ! ");
         }
-        
+
         System.out.println("Choisissez le second quartier à échanger avec le précédent (entre 1 et 9)");
         while (!((q2 > 0 && q2 < 10) && (q1 != q2))) {
             q2 = scanner.nextInt();
             if ((q2 < 0 || q2 > 10) || (q1 == q2))
                 System.out.println("Ressaisissez un chiffre entre 1 et 9, différent du premier (obligation d'échanger)!");
-    }
-// trouver un moyen de de designer la case du plateau enfonction de sa place
+        }
+        colonne1 = (q1-1) % 3;
+        ligne1 = (q1-1) / 3;
+        colonne2 = (q2-1) % 3;
+        ligne2 = (q2-1) / 3;
+
+        variable = quartier[ligne1][colonne1];
+        quartier[ligne1][colonne1] = quartier[ligne2][colonne2];
+        quartier[ligne2][colonne2]=variable;
+        }
 
       public void rotation(){
          int pst = 0;
